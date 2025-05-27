@@ -1,0 +1,27 @@
+{
+  "name": "@app.lib/mfe-api-kit",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "@apollo/client": "^3.13.8",
+    "@tanstack/react-query": "^5.76.1"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.13.8",
+    "@tanstack/react-query": "^5.76.1",
+    "@app.system/config": "*"
+  },
+  "exports": {
+    "./request-api": {
+      "import": "./dist/request-api/index.mjs",
+      "require": "./dist/request-api/index.js",
+      "types": "./dist/request-api/index.d.ts"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
