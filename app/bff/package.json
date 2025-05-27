@@ -1,0 +1,21 @@
+{
+  "name": "@app/bff",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node . -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "serve-static": "^2.2.0",
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1"
+  }
+}

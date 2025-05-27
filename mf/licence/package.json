@@ -1,0 +1,38 @@
+{
+  "name": "@mf/licence",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "pilet"
+  ],
+  "scripts": {
+    "start": "pilet --port 2345 debug",
+    "build": "pilet build",
+    "upgrade": "pilet upgrade",
+    "postinstall": "pilet declaration"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "importmap": {
+    "inherit": [
+      "@app/host-app"
+    ]
+  },
+  "source": "src/index.tsx",
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "@app/ui-kit": "^1.0.0"
+  },
+  "dependencies": {
+    "@mui/material": "6.3.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0"
+  },
+  "devDependencies": {
+    "@app/ui-kit": "^1.0.0",
+    "@app/host-app": "*"
+  }
+}
