@@ -30,8 +30,7 @@
       "@emotion/styled": ".",
       "react": ".",
       "react-dom": ".",
-      "@tanstack/react-query": ".",
-      "@app.lib/mfe-api-kit/request-api": "."
+      "@tanstack/react-query": "."
     },
     "inherit": [
       "piral-base",
