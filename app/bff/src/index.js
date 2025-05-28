@@ -37,6 +37,15 @@ app.post('/license/check-validity', async (req, res) => {
        .json({isValid: !!key})
 })
 
+app.get('/tenants', async (req, res) => {
+    const tenants = [
+        {id: '1', name: 'Tenant 1', description: 'Description tenant 1'},
+        {id: '2', name: 'Tenant 2', description: 'Description tenant 2'},
+    ]
+    res.status(200)
+       .json(tenants)
+})
+
 app.listen(port, () => {
     console.log(`Bff started on port ${port}`);
 })
