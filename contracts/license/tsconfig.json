@@ -8,11 +8,14 @@
     "module": "esnext",
     "jsx": "react-jsx",
     "importHelpers": true,
-    "strict": true
+    "strict": true,
+    "resolveJsonModule": true,
+    "baseUrl": "."
   },
   "include": [
-    "src",
-    "../typings"
+    "./src",
+    "../typings",
+    "vite.config.ts"
   ],
   "exclude": [
     "node_modules"
