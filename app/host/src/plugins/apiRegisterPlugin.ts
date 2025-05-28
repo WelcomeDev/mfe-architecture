@@ -16,7 +16,6 @@ export const apiRegisterPlugin = (config: ApiRegisterParams): PiralPlugin<ApiReg
         register(register: ApiRegister) {
             const { dispose } = register({
                 apiClient: (url, params) => fetch(`http://localhost:9001${url}`, params),
-                debug: true,
             });
             return () => dispose();
         },
