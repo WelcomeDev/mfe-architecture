@@ -1,6 +1,32 @@
+// should be singleton!
 import { clientEvents } from './constants';
 import { IEvoApi } from './clientTypes';
 import { createEvoEventName } from './eventNamingStrategy';
+
+export class GlobalApiClientRegistrationListener {
+    private activeRegistrations = new Set<string>();
+
+    private readonly cleanup: () => void;
+
+    constructor() {
+        this.cleanup = ApiRegistrationEvent.createListener(this.registerHandler);
+    }
+
+    private registerHandler = (e: ApiRegistrationEvent) => {
+        console.log(e.type);
+        console.log(e.detail);
+        if (this.activeRegistrations.has(e.detail.clientName)) {
+            console.warn('Client with name "' + e.detail.clientName + '" is already registered.');
+            return;
+        }
+        this.activeRegistrations.add(e.detail.clientName);
+    };
+
+    dispose = () => {
+        this.cleanup();
+        this.activeRegistrations.clear();
+    };
+}
 
 interface RegistrationEventDetails<TClient extends IEvoApi = IEvoApi> {
     clientName: string;
@@ -46,7 +72,7 @@ export class ApiUnregisterEvent extends CustomEvent<UnregisterEventDetails> {
     constructor(clientName: string) {
         super(ApiUnregisterEvent.type, {
             detail: {
-                clientName
+                clientName,
             },
         });
     }
