@@ -1,24 +1,25 @@
 import { ProcedureBuilder, UnsetMarker, createBuilder } from './core/apiRequestBuilder';
 import { AsyncBus } from './core/asyncBus';
-import { IEvoApi, IApiRequestFactory, IEvoApiParams, IEvoApiReturn } from './core/clientTypes';
+import { IEvoApi, IApiRequestFactory } from './core/clientTypes';
 import { ApiRegistrationEvent, ApiUnregisterEvent } from './core/apiRegistration';
 
-type FactoryParams = {
+type InternalRegisterFactoryParams = {
     // todo: replace with Apollo-stuff
     apiClient: typeof fetch
+    debug?: boolean;
     builder: ProcedureBuilder<UnsetMarker, UnsetMarker>
 }
 
-export type RegisterParams = Pick<FactoryParams, 'apiClient'>
+export type PublicRegisterParams = Omit<InternalRegisterFactoryParams, 'builder'>
 
-type Factory<T extends IEvoApi> = (params: FactoryParams) => T;
+type Factory<T extends IEvoApi> = (params: InternalRegisterFactoryParams) => T;
 
 export type ExposeApiParams = {
     apiName: string;
 }
 
 export interface ApiRegister {
-    (params: RegisterParams): { dispose: () => void; };
+    (params: PublicRegisterParams): { dispose: () => void; };
 }
 
 export type ExposeApi<TApiClient extends IEvoApi> = {
@@ -43,13 +44,20 @@ export function exposeApi<TApiClient extends IEvoApi>(params: ExposeApiParams, f
 
     const requestFactory = createRequestFactory<TApiClient>(bus);
 
-    const register: ApiRegister = (registerParams: RegisterParams) => {
-        const factoryInitParams: FactoryParams = {
+    const register: ApiRegister = (registerParams: PublicRegisterParams) => {
+        const factoryInitParams: InternalRegisterFactoryParams = {
             ...registerParams,
             builder: createBuilder({}),
         };
         const client = factory(factoryInitParams);
         ApiRegistrationEvent.dispatch(apiName, client);
+
+        if (registerParams.debug) {
+            // @ts-expect-error
+            window.__debug = window.__debug ?? {};
+            // @ts-expect-error
+            window.__debug[apiName] = window.__debug[apiName] ? window.__debug[apiName].concat(bus) : [ bus ];
+        }
 
         return {
             dispose: () => {
