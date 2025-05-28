@@ -32,7 +32,7 @@ export class AsyncBus<TApiClient extends IEvoApi> {
     private ensureClientExists = async (): Promise<TApiClient> => {
         if (this.client) return Promise.resolve(this.client);
 
-        const { promise } = this.createClientWatcher();
+        const { promise, promiseController } = this.createClientWatcher();
         const registryUpdatedPromise = promise
             .then(() => this.client || registrationDeclined);
 
@@ -43,6 +43,8 @@ export class AsyncBus<TApiClient extends IEvoApi> {
         ]);
 
         if (result === eventTimeout) {
+            // закрываем промис с реджектом, если отработал таймаут, чтобы выполнить отчистку
+            promiseController.reject?.();
             throw new AsyncBusException(this.clientName, 'registrationTimeout');
         }
 
