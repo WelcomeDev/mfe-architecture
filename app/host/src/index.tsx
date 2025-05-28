@@ -2,9 +2,9 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createInstance, Piral, createStandardApi } from 'piral';
 import { layout, errors } from './layout';
+import { apiRegisterPlugin } from './plugins/apiRegisterPlugin';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// change to your feed URL here (either using feed.piral.cloud or your own service)
 const feedUrl = 'http://localhost:9999/feed';
 //const feedUrl = 'http://localhost:9999/direct-feed';
 
@@ -15,9 +15,13 @@ const instance = createInstance({
     },
     plugins: [
         ...createStandardApi(),
+        apiRegisterPlugin,
     ],
     // it dramatically speeds up loading
     async: true,
+    debug: {
+        defaultFeedUrl: feedUrl,
+    },
     requestPilets() {
         return fetch(feedUrl)
             .then((res) => res.json())
