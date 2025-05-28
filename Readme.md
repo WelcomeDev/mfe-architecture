@@ -14,6 +14,10 @@ lerna run start --scope="@mf/*"
 ```
 Почему-то mfe не стартуют, если писать в одном терминале одной командой
 
+- http://localhost:1234 - host-app
+- http://localhost:2345 - mf-license
+- http://localhost:3456 - mf-users
+
 ## Приложения
 - `@app/feed` - на коленке собранный feed-service. Умеет проксировать запросы на dev-mfes с задержкой и без нее. `/feed` - прокси, `/direct-feed` - без прокси 
 - `@app/bff` - симулятор активной деятельности бекендера. Сюда просто кидаются запросы
