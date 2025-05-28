@@ -2,6 +2,12 @@
 
 Нужно запустить все mfe, host-app, feed и bff
 
+Перед запуском собрать библиотеки
+```
+lerna run build --scope="@app.lib/*" --scope="@evo.contracts/*"
+```
+
+В 2х терминалах запустить
 ```
 lerna run start --scope="@app/*"
 lerna run start --scope="@mf/*"
