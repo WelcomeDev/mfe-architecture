@@ -1,12 +1,12 @@
 import { ProcedureBuilder, UnsetMarker, createBuilder } from './core/apiRequestBuilder';
-import { AsyncBus } from './core/asyncBus';
+import { ApiRegisterEvent, ApiUnregisterEvent, AsyncBus } from './core/asyncBus';
 import { IEvoApi, IApiRequestFactory } from './core/clientTypes';
-import { ApiRegistrationEvent, ApiUnregisterEvent } from './core/apiRegistration';
+import { getBus } from './core/apiRegistration';
 
 type InternalRegisterFactoryParams = {
     // todo: replace with Apollo-stuff
     apiClient: typeof fetch
-    debug?: boolean;
+//    debug?: boolean;
     builder: ProcedureBuilder<UnsetMarker, UnsetMarker>
 }
 
@@ -40,7 +40,7 @@ export function exposeApi<TApiClient extends IEvoApi>(params: ExposeApiParams, f
         apiName,
     } = params;
 
-    const bus = new AsyncBus<TApiClient>(apiName);
+    const bus = getBus<TApiClient>(apiName);
 
     const requestFactory = createRequestFactory<TApiClient>(bus);
 
@@ -50,14 +50,7 @@ export function exposeApi<TApiClient extends IEvoApi>(params: ExposeApiParams, f
             builder: createBuilder({}),
         };
         const client = factory(factoryInitParams);
-        ApiRegistrationEvent.dispatch(apiName, client);
-
-        if (registerParams.debug) {
-            // @ts-expect-error
-            window.__debug = window.__debug ?? {};
-            // @ts-expect-error
-            window.__debug[apiName] = window.__debug[apiName] ? window.__debug[apiName].concat(bus) : [ bus ];
-        }
+        ApiRegisterEvent.dispatch(apiName, client);
 
         return {
             dispose: () => {
@@ -73,12 +66,7 @@ export function exposeApi<TApiClient extends IEvoApi>(params: ExposeApiParams, f
 function createRequestFactory<TApiClient extends IEvoApi>(bus: AsyncBus<TApiClient>): IApiRequestFactory<TApiClient> {
     const handle: IApiRequestFactory<TApiClient>['handle'] = (key, params) => {
         console.log('call', key, 'params:', params);
-        const result = bus.callPromise(key, params);
-        result.then(it => {
-            console.log('key result', it);
-            return it;
-        });
-        return result;
+        return bus.callPromise(key, params);
     };
 
     return {
