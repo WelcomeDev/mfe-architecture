@@ -22,18 +22,21 @@
   },
   "source": "src/index.tsx",
   "peerDependencies": {
-    "@app/ui-kit": "^1.0.0",
+    "@app.lib/ui-kit": "^1.0.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "dependencies": {
-    "@mui/material": "6.4.11",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mui/material": "6.4.11",
     "clsx": "^2.1.1"
   },
   "devDependencies": {
-    "@app/ui-kit": "^1.0.0",
-    "@app/host-app": "*"
+    "@app.lib/ui-kit": "^1.0.0",
+    "@app/host-app": "*",
+    "piral-cli": "^1.8.5",
+    "piral-cli-vite6": "latest",
+    "vite": "^6.3.5"
   }
 }

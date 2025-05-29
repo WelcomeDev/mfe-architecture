@@ -15,6 +15,7 @@
     "@app.lib/mfe-api-kit": "*"
   },
   "devDependencies": {
-    "@app.system/config": "*"
+    "@app.system/config": "*",
+    "vite": "^6.3.5"
   }
 }
