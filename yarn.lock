@@ -63,12 +63,21 @@ __metadata:
   resolution: "@app.lib/mfe-api-kit@workspace:lib/mfe-api-kit"
   dependencies:
     "@apollo/client": "npm:^3.13.8"
-    "@app.system/config": "npm:*"
+    "@rollup/plugin-replace": "npm:^6.0.2"
     "@tanstack/react-query": "npm:^5.76.1"
+    "@types/node": "npm:^22"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@vitejs/plugin-react": "npm:^4.4.1"
+    react: "npm:^18"
+    react-dom: "npm:^18"
     vite: "npm:^6.3.5"
+    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
     "@apollo/client": ^3.13.8
     "@tanstack/react-query": ^5.76.1
+    react: ^18
+    react-dom: ^18
   languageName: unknown
   linkType: soft
 
@@ -76,8 +85,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app.lib/ui-kit@workspace:lib/ui-kit"
   dependencies:
-    "@app.system/config": "npm:*"
     "@chromatic-com/storybook": "npm:^3.2.6"
+    "@rollup/plugin-replace": "npm:^6.0.2"
     "@storybook/addon-essentials": "npm:^8.6.12"
     "@storybook/addon-interactions": "npm:^8.6.12"
     "@storybook/addon-links": "npm:^8.6.12"
@@ -87,18 +96,23 @@ __metadata:
     "@storybook/react": "npm:^8.6.12"
     "@storybook/react-vite": "npm:^8.6.12"
     "@storybook/test": "npm:^8.6.12"
+    "@types/node": "npm:^22"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@vitejs/plugin-react": "npm:^4.4.1"
     prop-types: "npm:^15.8.1"
     react: "npm:^18"
     react-dom: "npm:^18"
     storybook: "npm:^8.6.12"
     vite: "npm:^6.3.5"
+    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
     react: ^18
     react-dom: ^18
   languageName: unknown
   linkType: soft
 
-"@app.system/config@npm:*, @app.system/config@workspace:system/config":
+"@app.system/config@workspace:system/config":
   version: 0.0.0-use.local
   resolution: "@app.system/config@workspace:system/config"
   languageName: unknown
@@ -720,10 +734,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/license@workspace:contracts/license"
   dependencies:
-    "@app.system/config": "npm:*"
+    "@rollup/plugin-replace": "npm:^6.0.2"
+    "@types/node": "npm:^22"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@vitejs/plugin-react": "npm:^4.4.1"
+    react: "npm:^18"
+    react-dom: "npm:^18"
     vite: "npm:^6.3.5"
+    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
     "@app.lib/mfe-api-kit": "*"
+    react: ^18
+    react-dom: ^18
   languageName: unknown
   linkType: soft
 
@@ -731,10 +754,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/tenants@workspace:contracts/tenants"
   dependencies:
-    "@app.system/config": "npm:*"
+    "@rollup/plugin-replace": "npm:^6.0.2"
+    "@types/node": "npm:^22"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@vitejs/plugin-react": "npm:^4.4.1"
+    react: "npm:^18"
+    react-dom: "npm:^18"
     vite: "npm:^6.3.5"
+    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
     "@app.lib/mfe-api-kit": "*"
+    react: ^18
+    react-dom: ^18
   languageName: unknown
   linkType: soft
 
@@ -952,6 +984,7 @@ __metadata:
     "@emotion/styled": "npm:^11.14.0"
     "@evo.contracts/tenants": "npm:1.0.0"
     "@mui/material": "npm:6.3.1"
+    clsx: "npm:^2.1.1"
     piral-cli: "npm:^1.8.5"
     piral-cli-vite6: "npm:latest"
     vite: "npm:^6.3.5"
@@ -2848,6 +2881,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^22":
+  version: 22.15.27
+  resolution: "@types/node@npm:22.15.27"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10c0/1057dfabd9dc1a9c0de35b057341f0b22e4b54082d432cca6c30209e16bd67668cdb41a794ea753deaaf15f6d6fdc1e1cb2551afe21a78952e0b82386697b133
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.4
   resolution: "@types/normalize-package-data@npm:2.4.4"
@@ -3199,6 +3241,15 @@ __metadata:
     js-yaml: "npm:^3.10.0"
     tslib: "npm:^2.4.0"
   checksum: 10c0/a0c340e13129643162423d7e666061c0b39b143bfad3fc5a74c7d92a30fd740f6665d41cd4e61832c20375889d793eea1d1d103cacb39ed68f7acd168add8c53
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/types@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@yarnpkg/types@npm:4.0.1"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/90226789475680ba599833571dd76c0718dd5b4c5022481263ef309d6a628f6246671cd6ca86e49c966ddefa7aca6ccef82240dc1476d2cea702ea5bee2a6b72
   languageName: node
   linkType: hard
 
@@ -8939,31 +8990,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"piral-mf@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "piral-mf@workspace:."
-  dependencies:
-    "@emotion/react": "npm:^11.14.0"
-    "@emotion/styled": "npm:^11.14.0"
-    "@rollup/plugin-replace": "npm:^6.0.2"
-    "@types/node": "npm:latest"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    "@types/react-router": "npm:^5"
-    "@types/react-router-dom": "npm:^5"
-    "@vitejs/plugin-react": "npm:^4.4.1"
-    lerna: "npm:^8.2.2"
-    piral-cli: "npm:^1.8.5"
-    piral-cli-vite6: "npm:latest"
-    react: "npm:^18"
-    react-dom: "npm:^18"
-    tslib: "npm:^2.8.1"
-    typescript: "npm:latest"
-    vite: "npm:^6.3.5"
-    vite-plugin-dts: "npm:^4.5.3"
-  languageName: unknown
-  linkType: soft
-
 "piral-modals@npm:^1.8.5":
   version: 1.8.5
   resolution: "piral-modals@npm:1.8.5"
@@ -9792,6 +9818,29 @@ __metadata:
   checksum: 10c0/c4d5f2257320b50dc0e035e31d8d2f78d36b7015aef2f87cc984c0a1c97ffebf14337dddeb488b4b11ae798fea6486189b77e7cf677617dcf611d97db41ebfda
   languageName: node
   linkType: hard
+
+"root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "root@workspace:."
+  dependencies:
+    "@emotion/react": "npm:^11.14.0"
+    "@emotion/styled": "npm:^11.14.0"
+    "@types/node": "npm:latest"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@types/react-router": "npm:^5"
+    "@types/react-router-dom": "npm:^5"
+    "@yarnpkg/types": "npm:^4.0.1"
+    lerna: "npm:^8.2.2"
+    piral-cli: "npm:^1.8.5"
+    piral-cli-vite6: "npm:latest"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    tslib: "npm:^2.8.1"
+    typescript: "npm:latest"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
 
 "router@npm:^2.2.0":
   version: 2.2.0

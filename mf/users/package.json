@@ -35,6 +35,7 @@
   "devDependencies": {
     "@app.lib/ui-kit": "^1.0.0",
     "@app/host-app": "*",
+    "clsx": "^2.1.1",
     "piral-cli": "^1.8.5",
     "piral-cli-vite6": "latest",
     "vite": "^6.3.5"

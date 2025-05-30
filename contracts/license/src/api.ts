@@ -2,7 +2,7 @@ import {
     exposeApi,
     type ProcedureResolverOptions,
     createReactQueryClient,
-} from '@app.lib/mfe-api-kit/request-api';
+} from '@app.lib/mfe-api-kit';
 import { name } from '../package.json';
 
 export interface LicenseDto {

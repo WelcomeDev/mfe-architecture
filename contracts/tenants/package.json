@@ -12,10 +12,19 @@
   "license": "ISC",
   "description": "",
   "peerDependencies": {
-    "@app.lib/mfe-api-kit": "*"
+    "@app.lib/mfe-api-kit": "*",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@app.system/config": "*",
-    "vite": "^6.3.5"
+    "@rollup/plugin-replace": "^6.0.2",
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.4.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.3"
   }
 }

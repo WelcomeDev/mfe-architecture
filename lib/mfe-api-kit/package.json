@@ -4,22 +4,27 @@
   "scripts": {
     "build": "vite build"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "peerDependencies": {
     "@apollo/client": "^3.13.8",
-    "@tanstack/react-query": "^5.76.1"
+    "@tanstack/react-query": "^5.76.1",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@apollo/client": "^3.13.8",
-    "@app.system/config": "*",
+    "@rollup/plugin-replace": "^6.0.2",
     "@tanstack/react-query": "^5.76.1",
-    "vite": "^6.3.5"
-  },
-  "exports": {
-    "./request-api": {
-      "import": "./dist/request-api/index.mjs",
-      "require": "./dist/request-api/index.js",
-      "types": "./dist/request-api/index.d.ts"
-    }
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.4.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.3"
   },
   "keywords": [],
   "author": "",
