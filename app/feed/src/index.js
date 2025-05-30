@@ -2,7 +2,7 @@ import express from 'express';
 import { resolve } from 'node:path'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import cors from 'cors';
-
+import * as t from 'timers/promises'
 const app = express();
 const staticDir = resolve(import.meta.dirname, '../../../');
 app.use(cors());
@@ -34,7 +34,7 @@ app.use('/feed-proxy/:piletName', async (req, res, next) => {
     }
 
     if (piletInfo.delay) {
-        await new Promise(resolve => setTimeout(resolve, piletInfo.delay));
+        await t.setTimeout(piletInfo.delay);
     }
 
     const targetUrl = `http://localhost:${piletInfo.port}`;

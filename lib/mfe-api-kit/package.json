@@ -10,8 +10,9 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.13.8",
+    "@app.system/config": "*",
     "@tanstack/react-query": "^5.76.1",
-    "@app.system/config": "*"
+    "vite": "^6.3.5"
   },
   "exports": {
     "./request-api": {
