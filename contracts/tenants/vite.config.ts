@@ -47,8 +47,7 @@ export default defineConfig({
             name,
         },
         rollupOptions: {
-            external: [ 'react', 'react-dom', 'react/jsx-runtime' ].concat(Object.keys(peerDependencies))
-                                                                   .concat('@app.lib/mfe-api-kit/request-api'),
+            external: [ 'react', 'react-dom', 'react/jsx-runtime' ].concat(Object.keys(peerDependencies)),
             output: {
                 globals: {
                     react: 'React',

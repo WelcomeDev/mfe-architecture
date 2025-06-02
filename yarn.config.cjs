@@ -19,28 +19,37 @@ const workspaceDependencyRules = [
       "react-dom": "^18",
       "@types/node": "^22",
       "@types/react": "^18",
-      "@types/react-dom": "^18"
+      "@types/react-dom": "^18",
+      "typescript": "^5.8.3"
     }
   },
   {
     target: ['@evo.contracts/*'],
     peerDependencies: {
-      "@app.lib/mfe-api-kit": "*",
+      // "@app.lib/mfe-api-kit": "*",
     },
-    devDependencies: {},
+    devDependencies: {
+      // "@app.lib/mfe-api-kit": "*",
+    },
     dependencies: {},
   },
   {
-    target: ["@mf/*"],
+    target: ["@mf/*", "@app/host-app"],
     dependencies: {},
+    devDependencies: {
+      "piral-cli": "1.5.6",
+      "piral": "1.5.6",
+      "piral-base": "1.5.6",
+      "piral-cli-webpack5": "1.5.6",
+      "piral-core": "1.5.6",
+    },
+  },
+  {
+    target: ["@mf/*"],
     peerDependencies: {
-      "@app.lib/ui-kit": "^1.0.0"
     },
     devDependencies: {
-      "@app.lib/ui-kit": "^1.0.0",
       "@app/host-app": "*",
-      "piral-cli-vite6": "latest",
-      "piral-cli": "^1.8.5"
     }
   },
   {
@@ -79,7 +88,6 @@ module.exports = defineConfig({
     };
 
     for (const workspace of Yarn.workspaces()) {
-      // Skip root
       if (workspace.manifest.name === "root") continue;
       const pkgName = workspace.manifest.name;
       const expected = getExpected(pkgName);
@@ -89,7 +97,6 @@ module.exports = defineConfig({
 
       for (const depType of ["dependencies", "devDependencies", "peerDependencies"]) {
         for (const [dependencyName, dependencyRange] of Object.entries(expected[depType])) {
-          // use workspace.set to add or update in one step
           workspace.set(`${depType}.${dependencyName}`, dependencyRange);
         }
       }
