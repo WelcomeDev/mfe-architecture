@@ -20,8 +20,8 @@
     "react-router-dom": "^5"
   },
   "scripts": {
-    "start": "piral debug",
-    "build": "piral build && piral declaration"
+    "start": "piral debug --bundler webpack5",
+    "build": "piral build --bundler webpack5 && piral declaration"
   },
   "app": "./src/index.html",
   "types": "dist/index.d.ts",

@@ -6,8 +6,8 @@
     "pilet"
   ],
   "scripts": {
-    "start": "pilet --port 3456 debug",
-    "build": "pilet build",
+    "start": "pilet debug --port 3456 --bundler webpack5",
+    "build": "pilet build --bundler webpack5 ",
     "upgrade": "pilet upgrade"
   },
   "main": "dist/index.js",
