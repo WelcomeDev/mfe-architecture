@@ -5,6 +5,14 @@ const {defineConfig} = require('@yarnpkg/types');
 const workspaceDependencyRules = [
   {
     target: ["@app-lib/*", "@evo.contracts/*"],
+    devDependencies: {
+      "@app-system/config": "*",
+      "vite": "^6.3.5",
+      "typescript": "^5.8.3"
+    }
+  },
+  {
+    target: ["@app-lib/ui-kit", "@app-lib/react-core", "@evo.contracts/*"],
     dependencies: {},
     peerDependencies: {
       "react": "^18",
@@ -15,18 +23,16 @@ const workspaceDependencyRules = [
       "react-dom": "^18",
       "@types/node": "^22",
       "@types/react": "^18",
-      "@types/react-dom": "^18",
-      "typescript": "^5.8.3",
-      "@app-system/config": "*"
+      "@types/react-dom": "^18"
     }
   },
   {
     target: ['@evo.contracts/*'],
     peerDependencies: {
-      // "@app-lib/mfe-api-kit": "*",
+      // "@app-lib/react-core": "*",
     },
     devDependencies: {
-      // "@app-lib/mfe-api-kit": "*",
+      // "@app-lib/react-core": "*",
     },
     dependencies: {},
   },

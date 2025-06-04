@@ -1,7 +1,7 @@
 import { IEvoApi, IEvoApiParams, IEvoApiReturn, IEvoApiMethod } from './clientTypes';
+import { createEvoEventName } from '../common/eventNamingStrategy';
+import { clientEvents } from '../common/constants';
 import { wait } from '../../utils';
-import { createEvoEventName } from './eventNamingStrategy';
-import { clientEvents } from './constants';
 
 const eventTimeout = Symbol('Registration wait error');
 const registrationDeclined = Symbol('Registration declined error');

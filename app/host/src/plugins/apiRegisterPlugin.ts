@@ -1,5 +1,5 @@
 import type { PiralPlugin } from 'piral-core';
-import type { ApiRegister } from '@app-lib/mfe-api-kit';
+import type { ApiRegister } from '@app-lib/react-core';
 
 export interface ApiRegistryPlugin {
     apiRegistry: {

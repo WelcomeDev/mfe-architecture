@@ -4,5 +4,5 @@ export const clientEvents = {
     END_REQUEST: 'endRequest',
     INIT_CLIENT: 'initClient',
     DELETE_CLIENT: 'deleteClient',
-    __prefix: 'EvoApi'
+    __prefix: 'EvoApi',
 } as const;

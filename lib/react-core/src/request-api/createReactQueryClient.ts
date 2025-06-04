@@ -1,5 +1,5 @@
 import { UseMutationResult, UseQueryResult, NoInfer, useQuery, useMutation } from '@tanstack/react-query';
-import { IEvoApi, Unpromise, IEvoApiReturn, IEvoApiParams, IApiRequestFactory } from './core/clientTypes';
+import { IEvoApi, Unpromise, IEvoApiReturn, IEvoApiParams, IApiRequestFactory } from '@app-lib/core';
 import type {
     UseQueryOptions as UseQueryOptionsBase,
     UseMutationOptions as UseMutationOptionsBase,

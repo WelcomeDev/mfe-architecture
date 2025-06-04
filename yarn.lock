@@ -58,25 +58,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@app-lib/mfe-api-kit@npm:*, @app-lib/mfe-api-kit@workspace:lib/mfe-api-kit":
+"@app-lib/core@workspace:lib/core":
   version: 0.0.0-use.local
-  resolution: "@app-lib/mfe-api-kit@workspace:lib/mfe-api-kit"
+  resolution: "@app-lib/core@workspace:lib/core"
+  dependencies:
+    "@app-system/config": "npm:*"
+    "@types/node": "npm:^22"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@app-lib/react-core@npm:*, @app-lib/react-core@workspace:lib/react-core":
+  version: 0.0.0-use.local
+  resolution: "@app-lib/react-core@workspace:lib/react-core"
   dependencies:
     "@apollo/client": "npm:^3.13.8"
     "@app-system/config": "npm:*"
-    "@rollup/plugin-replace": "npm:^6.0.2"
     "@tanstack/react-query": "npm:^5.76.1"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
-    "@vitejs/plugin-react": "npm:^4.4.1"
     react: "npm:^18"
     react-dom: "npm:^18"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"
-    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
     "@apollo/client": ^3.13.8
+    "@app-lib/core": 1.0.0
     "@tanstack/react-query": ^5.76.1
     react: ^18
     react-dom: ^18
@@ -157,7 +166,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/host-app@workspace:app/host"
   dependencies:
-    "@app-lib/mfe-api-kit": "npm:*"
+    "@app-lib/react-core": "npm:*"
     "@app-lib/ui-kit": "npm:*"
     "@app/host-app": "npm:*"
     "@evo.contracts/tenants": "npm:1.0.0"
@@ -1786,20 +1795,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/license@workspace:contracts/license"
   dependencies:
-    "@app-lib/mfe-api-kit": "npm:*"
+    "@app-lib/react-core": "npm:*"
     "@app-system/config": "npm:*"
-    "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
-    "@vitejs/plugin-react": "npm:^4.4.1"
     react: "npm:^18"
     react-dom: "npm:^18"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"
-    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
-    "@app-lib/mfe-api-kit": "*"
+    "@app-lib/react-core": "*"
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -1809,20 +1815,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/tenants@workspace:contracts/tenants"
   dependencies:
-    "@app-lib/mfe-api-kit": "npm:*"
+    "@app-lib/react-core": "npm:*"
     "@app-system/config": "npm:*"
-    "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
-    "@vitejs/plugin-react": "npm:^4.4.1"
     react: "npm:^18"
     react-dom: "npm:^18"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"
-    vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
-    "@app-lib/mfe-api-kit": "*"
+    "@app-lib/react-core": "*"
     react: ^18
     react-dom: ^18
   languageName: unknown

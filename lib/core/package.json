@@ -1,0 +1,21 @@
+{
+  "name": "@app-lib/core",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "@app-system/config": "*",
+    "@types/node": "^22",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
