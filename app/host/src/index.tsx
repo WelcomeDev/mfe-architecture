@@ -15,7 +15,7 @@ const instance = createInstance({
     errorComponents: errors,
   },
   plugins: [
-    ...createStandardApi(),
+    ...createStandardApi({ dashboard: false }),
     apiRegisterPlugin({
       hostApis: [ tenantsApi.register ],
     }),
@@ -37,6 +37,7 @@ const root = createRoot(document.querySelector('#app'));
 const queryClient = new QueryClient({});
 root.render(
   <QueryClientProvider client={queryClient}>
-    <Piral instance={instance}/>
+    <Piral instance={instance}>
+    </Piral>
   </QueryClientProvider>,
 );
