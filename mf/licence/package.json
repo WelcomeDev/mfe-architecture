@@ -21,7 +21,7 @@
   },
   "source": "src/index.tsx",
   "peerDependencies": {
-    "@app.lib/ui-kit": "^1.0.0",
+    "@app-lib/ui-kit": "^1.0.0",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -32,8 +32,10 @@
     "@mui/material": "6.3.1"
   },
   "devDependencies": {
-    "@app.lib/ui-kit": "^1.0.0",
+    "@app-lib/ui-kit": "^1.0.0",
     "@app/host-app": "*",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "clsx": "^2.1.1",
     "piral": "1.5.6",
     "piral-base": "1.5.6",

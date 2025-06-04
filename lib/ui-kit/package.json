@@ -1,5 +1,5 @@
 {
-  "name": "@app.lib/ui-kit",
+  "name": "@app-lib/ui-kit",
   "version": "1.0.0",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",

@@ -4,7 +4,7 @@ const {defineConfig} = require('@yarnpkg/types');
 
 const workspaceDependencyRules = [
   {
-    target: ["@app.lib/*", "@evo.contracts/*"],
+    target: ["@app-lib/*", "@evo.contracts/*"],
     dependencies: {},
     peerDependencies: {
       "react": "^18",
@@ -26,10 +26,10 @@ const workspaceDependencyRules = [
   {
     target: ['@evo.contracts/*'],
     peerDependencies: {
-      // "@app.lib/mfe-api-kit": "*",
+      // "@app-lib/mfe-api-kit": "*",
     },
     devDependencies: {
-      // "@app.lib/mfe-api-kit": "*",
+      // "@app-lib/mfe-api-kit": "*",
     },
     dependencies: {},
   },
@@ -42,6 +42,8 @@ const workspaceDependencyRules = [
       "piral-base": "1.5.6",
       "piral-cli-webpack5": "1.5.6",
       "piral-core": "1.5.6",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
     },
   },
   {

@@ -58,11 +58,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@app.lib/mfe-api-kit@npm:*, @app.lib/mfe-api-kit@workspace:lib/mfe-api-kit":
+"@app-lib/mfe-api-kit@npm:*, @app-lib/mfe-api-kit@workspace:lib/mfe-api-kit":
   version: 0.0.0-use.local
-  resolution: "@app.lib/mfe-api-kit@workspace:lib/mfe-api-kit"
+  resolution: "@app-lib/mfe-api-kit@workspace:lib/mfe-api-kit"
   dependencies:
     "@apollo/client": "npm:^3.13.8"
+    "@app.system/config": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@tanstack/react-query": "npm:^5.76.1"
     "@types/node": "npm:^22"
@@ -82,9 +83,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@app.lib/ui-kit@npm:*, @app.lib/ui-kit@npm:^1.0.0, @app.lib/ui-kit@workspace:lib/ui-kit":
+"@app-lib/ui-kit@npm:*, @app-lib/ui-kit@npm:^1.0.0, @app-lib/ui-kit@workspace:lib/ui-kit":
   version: 0.0.0-use.local
-  resolution: "@app.lib/ui-kit@workspace:lib/ui-kit"
+  resolution: "@app-lib/ui-kit@workspace:lib/ui-kit"
   dependencies:
     "@chromatic-com/storybook": "npm:^3.2.6"
     "@rollup/plugin-replace": "npm:^6.0.2"
@@ -114,9 +115,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@app.system/config@workspace:system/config":
+"@app.system/config@npm:*, @app.system/config@workspace:system/config":
   version: 0.0.0-use.local
   resolution: "@app.system/config@workspace:system/config"
+  dependencies:
+    "@rollup/plugin-replace": "npm:^6.0.2"
+    "@vitejs/plugin-react": "npm:^4.4.1"
+    vite: "npm:^6.3.5"
+    vite-plugin-dts: "npm:^4.5.3"
   languageName: unknown
   linkType: soft
 
@@ -150,11 +156,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app/host-app@workspace:app/host"
   dependencies:
-    "@app.lib/mfe-api-kit": "npm:*"
-    "@app.lib/ui-kit": "npm:*"
+    "@app-lib/mfe-api-kit": "npm:*"
+    "@app-lib/ui-kit": "npm:*"
     "@app/host-app": "npm:*"
     "@evo.contracts/tenants": "npm:1.0.0"
     "@tanstack/react-query": "npm:^5.77.2"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    "@types/react-router": "npm:^5"
+    "@types/react-router-dom": "npm:^5"
     piral: "npm:1.5.6"
     piral-base: "npm:1.5.6"
     piral-cli: "npm:1.5.6"
@@ -1775,7 +1785,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/license@workspace:contracts/license"
   dependencies:
-    "@app.lib/mfe-api-kit": "npm:*"
+    "@app-lib/mfe-api-kit": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
@@ -1787,7 +1797,7 @@ __metadata:
     vite: "npm:^6.3.5"
     vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
-    "@app.lib/mfe-api-kit": "*"
+    "@app-lib/mfe-api-kit": "*"
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -1797,7 +1807,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@evo.contracts/tenants@workspace:contracts/tenants"
   dependencies:
-    "@app.lib/mfe-api-kit": "npm:*"
+    "@app-lib/mfe-api-kit": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
@@ -1809,7 +1819,7 @@ __metadata:
     vite: "npm:^6.3.5"
     vite-plugin-dts: "npm:^4.5.3"
   peerDependencies:
-    "@app.lib/mfe-api-kit": "*"
+    "@app-lib/mfe-api-kit": "*"
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -2047,12 +2057,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mf/licence@workspace:mf/licence"
   dependencies:
-    "@app.lib/ui-kit": "npm:^1.0.0"
+    "@app-lib/ui-kit": "npm:^1.0.0"
     "@app/host-app": "npm:*"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
     "@evo.contracts/tenants": "npm:1.0.0"
     "@mui/material": "npm:6.3.1"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
     clsx: "npm:^2.1.1"
     piral: "npm:1.5.6"
     piral-base: "npm:1.5.6"
@@ -2062,7 +2074,7 @@ __metadata:
     piral-core: "npm:1.5.6"
     vite: "npm:^6.3.5"
   peerDependencies:
-    "@app.lib/ui-kit": ^1.0.0
+    "@app-lib/ui-kit": ^1.0.0
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -2072,11 +2084,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mf/users@workspace:mf/users"
   dependencies:
-    "@app.lib/ui-kit": "npm:^1.0.0"
+    "@app-lib/ui-kit": "npm:^1.0.0"
     "@app/host-app": "npm:*"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
     "@mui/material": "npm:6.4.11"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
     clsx: "npm:^2.1.1"
     piral: "npm:1.5.6"
     piral-base: "npm:1.5.6"
@@ -2086,7 +2100,7 @@ __metadata:
     piral-core: "npm:1.5.6"
     vite: "npm:^6.3.5"
   peerDependencies:
-    "@app.lib/ui-kit": ^1.0.0
+    "@app-lib/ui-kit": ^1.0.0
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -4104,15 +4118,6 @@ __metadata:
   peerDependencies:
     "@types/react": "*"
   checksum: 10c0/0441b8b47c69312c89ec0760ba477ba1a0808a10ceef8dc1c64b1013ed78517332c30f18681b0ec0b53542731f1ed015169fed1d127cc91222638ed955478ec7
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:*":
-  version: 19.1.6
-  resolution: "@types/react@npm:19.1.6"
-  dependencies:
-    csstype: "npm:^3.0.2"
-  checksum: 10c0/8b10b198e28997b3c57559750f8bcf5ae7b33c554b16b6f4fe2ece1d4de6a2fc8cb53e7effe08ec9cb939d2f479eb97c5e08aac2cf83b10a90164fe451cc8ea2
   languageName: node
   linkType: hard
 
@@ -12678,8 +12683,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
-    "@types/react-router": "npm:^5"
-    "@types/react-router-dom": "npm:^5"
     "@yarnpkg/types": "npm:^4.0.1"
     lerna: "npm:^8.2.2"
     tslib: "npm:^2.8.1"
