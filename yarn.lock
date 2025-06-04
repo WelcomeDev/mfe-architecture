@@ -63,7 +63,7 @@ __metadata:
   resolution: "@app-lib/mfe-api-kit@workspace:lib/mfe-api-kit"
   dependencies:
     "@apollo/client": "npm:^3.13.8"
-    "@app.system/config": "npm:*"
+    "@app-system/config": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@tanstack/react-query": "npm:^5.76.1"
     "@types/node": "npm:^22"
@@ -87,6 +87,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@app-lib/ui-kit@workspace:lib/ui-kit"
   dependencies:
+    "@app-system/config": "npm:*"
     "@chromatic-com/storybook": "npm:^3.2.6"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@storybook/addon-essentials": "npm:^8.6.12"
@@ -115,9 +116,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@app.system/config@npm:*, @app.system/config@workspace:system/config":
+"@app-system/config@npm:*, @app-system/config@workspace:system/config":
   version: 0.0.0-use.local
-  resolution: "@app.system/config@workspace:system/config"
+  resolution: "@app-system/config@workspace:system/config"
   dependencies:
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@vitejs/plugin-react": "npm:^4.4.1"
@@ -1786,6 +1787,7 @@ __metadata:
   resolution: "@evo.contracts/license@workspace:contracts/license"
   dependencies:
     "@app-lib/mfe-api-kit": "npm:*"
+    "@app-system/config": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"
@@ -1808,6 +1810,7 @@ __metadata:
   resolution: "@evo.contracts/tenants@workspace:contracts/tenants"
   dependencies:
     "@app-lib/mfe-api-kit": "npm:*"
+    "@app-system/config": "npm:*"
     "@rollup/plugin-replace": "npm:^6.0.2"
     "@types/node": "npm:^22"
     "@types/react": "npm:^18"

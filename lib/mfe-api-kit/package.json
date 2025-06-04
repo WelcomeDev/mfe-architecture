@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.13.8",
-    "@app.system/config": "*",
+    "@app-system/config": "*",
     "@rollup/plugin-replace": "^6.0.2",
     "@tanstack/react-query": "^5.76.1",
     "@types/node": "^22",

@@ -11,16 +11,13 @@ const workspaceDependencyRules = [
       "react-dom": "^18"
     },
     devDependencies: {
-      "vite": "^6.3.5",
-      "@rollup/plugin-replace": "^6.0.2",
-      "@vitejs/plugin-react": "^4.4.1",
-      "vite-plugin-dts": "^4.5.3",
       "react": "^18",
       "react-dom": "^18",
       "@types/node": "^22",
       "@types/react": "^18",
       "@types/react-dom": "^18",
-      "typescript": "^5.8.3"
+      "typescript": "^5.8.3",
+      "@app-system/config": "*"
     }
   },
   {
@@ -48,8 +45,7 @@ const workspaceDependencyRules = [
   },
   {
     target: ["@mf/*"],
-    peerDependencies: {
-    },
+    peerDependencies: {},
     devDependencies: {
       "@app/host-app": "*",
     }

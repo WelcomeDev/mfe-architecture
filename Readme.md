@@ -4,7 +4,7 @@
 
 Перед запуском собрать библиотеки
 ```
-lerna run build --scope="@app-lib/*" --scope="@evo.contracts/*"
+lerna run build --scope="@app-lib/*" --scope="@evo.contracts/*" --scope="@app-system/config"
 ```
 
 В 2х терминалах запустить
@@ -31,7 +31,7 @@ lerna run start --scope="@mf/*"
 - `@app-lib/ui-kit` - ну это типо ui-kit 
 
 ## Чепуха
-- `@app.system/config` - оно пока не нужно, чет не заработал этот shared vite-config
+- `@app-system/config` - оно пока не нужно, чет не заработал этот shared vite-config
 
 ## Api
 ### Request-api
