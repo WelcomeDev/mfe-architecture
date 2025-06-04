@@ -28,7 +28,7 @@ app.get('/license/has-option', (req, res) => {
 
 app.get('/license/refresh', (req, res) => {
     license.dueDate = new Date().toISOString();
-    res.status(200);
+    res.status(200).send();
 })
 
 app.post('/license/check-validity', async (req, res) => {
