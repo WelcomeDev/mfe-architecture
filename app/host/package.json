@@ -32,7 +32,7 @@
       "react": ".",
       "react-dom": ".",
       "@tanstack/react-query": ".",
-      "@app-lib/react-core": ".",
+      "@app-lib/core": ".",
       "@app-lib/ui-kit": "."
     },
     "inherit": [
