@@ -8,7 +8,7 @@ lerna run build --scope="@app-lib/*" --scope="@evo.contracts/*" --scope="@app-sy
 ```
 
 В 2х терминалах запустить
-```
+```sh
 lerna run start --scope="@app/*"
 lerna run start --scope="@mf/*"
 ```
