@@ -6,19 +6,22 @@
     "piral"
   ],
   "dependencies": {
-    "piral": "^1.8.5",
-    "piral-base": "^1.8.5",
-    "piral-core": "^1.8.5",
+    "@app-lib/react-core": "*",
+    "@app-lib/ui-kit": "*",
+    "@evo.contracts/tenants": "1.0.0",
+    "@tanstack/react-query": "^5.77.2",
+    "piral": "1.5.6",
+    "piral-base": "1.5.6",
+    "piral-cli": "1.5.6",
+    "piral-core": "1.5.6",
     "react": "^18",
     "react-dom": "^18",
     "react-router": "^5",
-    "react-router-dom": "^5",
-    "@tanstack/react-query": "^5.77.2"
+    "react-router-dom": "^5"
   },
   "scripts": {
-    "start": "piral debug",
-    "build": "piral build",
-    "postinstall": "piral declaration"
+    "start": "piral debug --bundler webpack5",
+    "build": "piral build --bundler webpack5 && piral declaration"
   },
   "app": "./src/index.html",
   "types": "dist/index.d.ts",
@@ -28,7 +31,9 @@
       "@emotion/styled": ".",
       "react": ".",
       "react-dom": ".",
-      "@tanstack/react-query": "."
+      "@tanstack/react-query": ".",
+      "@app-lib/core": ".",
+      "@app-lib/ui-kit": "."
     },
     "inherit": [
       "piral-base",
@@ -37,5 +42,15 @@
     ]
   },
   "devDependencies": {
+    "@app/host-app": "*",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-router": "^5",
+    "@types/react-router-dom": "^5",
+    "piral": "1.5.6",
+    "piral-base": "1.5.6",
+    "piral-cli": "1.5.6",
+    "piral-cli-webpack5": "1.5.6",
+    "piral-core": "1.5.6"
   }
 }

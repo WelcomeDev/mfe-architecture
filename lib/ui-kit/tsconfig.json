@@ -7,11 +7,13 @@
     "moduleResolution": "Bundler",
     "module": "esnext",
     "jsx": "react-jsx",
-    "importHelpers": true
+    "importHelpers": true,
+    "resolveJsonModule": true
   },
   "include": [
     "src",
-    "../typings"
+    "../typings",
+    "./vite.config.ts"
   ],
   "exclude": [
     "node_modules"

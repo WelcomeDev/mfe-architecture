@@ -1,11 +1,13 @@
 import * as React from 'react';
 import MuiPackageJson from '@mui/material/package.json';
+import { tenantsApi } from './tenantsApi';
 
 export default () => {
     return (
         <>
             <h1>Licence component Title</h1>
             <p>Mui version: {MuiPackageJson.name}</p>
+            <TenantsInfo/>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat reiciendis illum qui nulla adipisci,
                 laudantium
@@ -28,3 +30,18 @@ export default () => {
         </>
     );
 };
+
+function TenantsInfo() {
+    const { data: tenants, isFetching } = tenantsApi.useQueryClient('getTenants', undefined);
+    if (isFetching) return <p>Tenants fetching...</p>;
+
+    if (!tenants?.length) return <p>Tenants empty!</p>;
+
+    return (
+        <ul>
+            {tenants.map(it =>
+                <li key={it.id}>{it.name}</li>,
+            )}
+        </ul>
+    );
+}

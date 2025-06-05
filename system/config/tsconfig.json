@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "lib": ["dom", "es2018"],
+    "moduleResolution": "Bundler",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "importHelpers": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "declaration": true,
+  },
+  "include": [
+    "./src",
+    "../typings"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

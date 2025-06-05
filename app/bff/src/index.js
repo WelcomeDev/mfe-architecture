@@ -26,15 +26,24 @@ app.get('/license/has-option', (req, res) => {
        .json({isIncluded: exisingKeys.includes(option)})
 })
 
-app.post('/license/refresh', (req, res) => {
+app.get('/license/refresh', (req, res) => {
     license.dueDate = new Date().toISOString();
-    res.status(200);
+    res.status(200).send();
 })
 
 app.post('/license/check-validity', async (req, res) => {
     const {key} = await req.body;
     res.status(200)
        .json({isValid: !!key})
+})
+
+app.get('/tenants', async (req, res) => {
+    const tenants = [
+        {id: '1', name: 'Tenant 1', description: 'Description tenant 1'},
+        {id: '2', name: 'Tenant 2', description: 'Description tenant 2'},
+    ]
+    res.status(200)
+       .json(tenants)
 })
 
 app.listen(port, () => {

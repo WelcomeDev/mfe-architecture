@@ -6,10 +6,9 @@
     "pilet"
   ],
   "scripts": {
-    "start": "pilet --port 2345 debug",
-    "build": "pilet build",
-    "upgrade": "pilet upgrade",
-    "postinstall": "pilet declaration"
+    "start": "pilet debug --port 2345 --bundler webpack5",
+    "build": "pilet build --bundler webpack5 ",
+    "upgrade": "pilet upgrade"
   },
   "main": "dist/index.js",
   "files": [
@@ -22,17 +21,28 @@
   },
   "source": "src/index.tsx",
   "peerDependencies": {
+    "@app-lib/ui-kit": "^1.0.0",
     "react": "^18",
-    "react-dom": "^18",
-    "@app/ui-kit": "^1.0.0"
+    "react-dom": "^18"
   },
   "dependencies": {
-    "@mui/material": "6.3.1",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0"
+    "@emotion/styled": "^11.14.0",
+    "@evo.contracts/tenants": "1.0.0",
+    "@mui/material": "6.3.1"
   },
   "devDependencies": {
-    "@app/ui-kit": "^1.0.0",
-    "@app/host-app": "*"
+    "@app-lib/ui-kit": "^1.0.0",
+    "@app/host-app": "*",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "clsx": "^2.1.1",
+    "piral": "1.5.6",
+    "piral-base": "1.5.6",
+    "piral-cli": "1.5.6",
+    "piral-cli-vite6": "latest",
+    "piral-cli-webpack5": "1.5.6",
+    "piral-core": "1.5.6",
+    "vite": "^6.3.5"
   }
 }

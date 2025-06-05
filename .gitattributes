@@ -1,0 +1,4 @@
+/.Yarn/**            linguist-vendored
+/.Yarn/releases/*    binary
+/.Yarn/plugins/**/*  binary
+/.pnp.*              binary linguist-generated
